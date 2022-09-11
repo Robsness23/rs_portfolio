@@ -18,9 +18,30 @@ const ProjectContainer = ({ project }) => (
       </ul>
     )}
 
+    {project.image && (
+      <img 
+      src={project.image} 
+      alt="project"
+      className='image'
+      />
+    )}
+
     {project.sourceCode && (
       <a
         href={project.sourceCode}
+        target='_blank'
+        rel='noreferrer'
+        aria-label='source code'
+        className='link link--icon'
+      >
+        <GitHubIcon />
+      </a>
+    )}
+    {project.sourceCode2 && (
+      <a
+        href={project.sourceCode2}
+        target='_blank'
+        rel='noreferrer'
         aria-label='source code'
         className='link link--icon'
       >
@@ -31,6 +52,8 @@ const ProjectContainer = ({ project }) => (
     {project.livePreview && (
       <a
         href={project.livePreview}
+        target='_blank'
+        rel='noreferrer'
         aria-label='live preview'
         className='link link--icon'
       >
